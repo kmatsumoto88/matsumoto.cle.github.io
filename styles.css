@@ -1,0 +1,390 @@
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(webbg.jpg);
+    background-size: cover;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    
+}
+html{
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+header {
+    background-color: #000000;  
+    color: #fff;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    left: 20px;
+    right: 20px; 
+    
+}
+
+.logo {
+    
+    margin: auto;
+}
+
+.animated-graphic1 {
+	margin-left: -40px;
+  
+  -webkit-animation: rotation 5s infinite linear;
+}
+.animated-graphic2 {
+	margin-left: -40px;
+  
+  -webkit-animation: rotation 5s infinite linear;
+}
+
+
+@-webkit-keyframes rotation {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(10deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+  }
+  75% {
+    -webkit-transform: rotate(-10deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+  
+  .circles {
+    top: 200px;
+    left: 200px;
+    width: 300px;
+    height: 250px;
+  }
+  
+
+  
+  .c-blue {
+    z-index: 2;
+  }
+  
+  .c-red {
+    z-index: 1;
+  }
+  
+  .c-red, .c-orange {
+    left: 0;
+    bottom: 20px;
+    width: 150px;
+  }
+  
+  .c-purple, .c-orange {
+    transform: scale(0, 0);
+  }
+  
+  .c-purple {
+    z-index: 2;
+    animation: scaleCircles 1s;
+    animation-fill-mode: forwards;
+    animation-delay: .6s;
+  }
+  
+  .c-orange {
+    z-index: 2;
+    animation: scaleCircles 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.2s;
+  }
+  
+  .s-purple {
+    top: 260px;
+    left: 180px;
+    z-index: 5;
+  }
+  
+
+  
+  .s-purple {
+    left: 177px;
+    width: 360px;
+    opacity: 0;
+    animation: spinAndShow 1.5s;
+    animation-fill-mode: forwards;
+  }
+
+
+@mixin setWidth($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@-webkit-keyframes spinAndShow {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  40% {
+    opacity: 0;
+    transform: rotate(20deg);
+  }
+  80% {
+    opacity: 1;
+    transform: rotate(-380deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(-360deg);
+  }
+}
+
+.content {
+  padding: 0px;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  
+}
+
+.image-container {
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between;
+}
+
+.image-container img {
+    width: 33%;
+    transition: transform 0.5s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.1);
+}
+
+.flying-png {
+    width: 12%;
+    height: 13%;
+    background-image: url('rocket.png');
+    background-size: cover;
+    position: absolute;
+    top: 50%; 
+    left: 0;
+    animation: flyOver 30s linear infinite;
+}
+
+@keyframes flyOver {
+    to {
+        transform: translateX(100vw);
+    }
+}
+
+.button-container {
+    margin-top: 20px;
+    text-align: center;
+}
+button {
+    align-items: center;
+    text-align: center;
+    padding: 25px 40px;
+    font-size: 16px;
+    background-color: #333;
+    margin-top: 20px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #20bfd1;
+}
+
+.non-animated-element {
+    margin-top: 20px;
+    padding: 0px;
+    text-align: center;
+}
+
+footer {    
+    background-color: #333;
+    color: #fff;
+    padding: 0px;
+    text-align: center;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes colorChange {
+    from { background-color: #333; }
+    to { background-color: #555; }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+.footer {
+  position: relative;
+  width: 94%;
+  background: #3586ff;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.social-icon,
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.social-icon__item,
+.menu__item {
+  list-style: none;
+}
+
+.social-icon__link {
+  align-items: center;
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+.social-icon__link:hover {
+  transform: translateY(-10px);
+}
+
+.menu__link {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+  font-weight: 300;
+}
+
+.menu__link:hover {
+  opacity: 1;
+}
+
+.footer p {
+  color: #fff;
+  margin: 15px 0 10px 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.wave {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("https://i.ibb.co/wQZVxxk/wave.png");
+  background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWaves 4s linear infinite;
+}
+
+.wave#wave2 {
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animate 4s linear infinite !important;
+}
+
+.wave#wave3 {
+  z-index: 1000;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWaves 3s linear infinite;
+}
+
+.wave#wave4 {
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animateWaves {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position-x: -1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+
+.star {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    opacity: 0;
+  }
+  
+  .star-left {
+    left: -50px;
+    top: 50%;
+    animation-name: shootStarLeft;
+  }
+  
+  @keyframes shootStarLeft {
+    0% {
+      transform: translate(-50%, -50%) rotate(45deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(150%, 150%) rotate(45deg);
+      opacity: 0;
+    }
+  }
